@@ -1,0 +1,127 @@
+  %%%%%%%%%%%%%%%
+% This CV example/template is based on my own
+% CV which I (lamely attempted) to clean up, so that
+% it's less of an eyesore and easier for others to use.
+%
+% LianTze Lim (liantze@gmail.com)
+% 23 Oct, 2022
+%
+\documentclass[a4paper,skipsamekey,11pt,english]{curve}
+
+% Uncomment to enable Chinese; needs XeLaTeX
+% \usepackage{ctex}
+
+\usepackage[colorlinks = true,
+            linkcolor = magenta,
+            urlcolor  = magenta,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+
+            
+% Default biblatex style used for the publication list is APA6. If you wish to use a different style or pass other options to biblatex you can change them here. 
+\PassOptionsToPackage{style=ieee,sorting=ydnt,uniquename=init,defernumbers=true, maxbibnames=70}{biblatex}
+
+% Most commands and style definitions are in settings.sty.
+\usepackage{settings}
+
+% If you need to further customise your biblatex setup e.g. with \DeclareFieldFormat etc please add them here AFTER loading settings.sty. For example, to remove the default "[Online] Available:" prefix before URLs when using the IEEE style:
+\DefineBibliographyStrings{english}{url={\textsc{url}}}
+
+\addbibresource{bibliography.bib}
+
+%% Specify your last name(s) and first name(s) (as given in the .bib) to automatically bold your own name in the publications list. 
+%% One caveat: You need to write \bibnamedelima where there's a space in your name for this to work properly; or write \bibnamedelimi if you use initials in the .bib
+% \mynames{Lim/Lian\bibnamedelima Tze}
+%\pagenumbering{gobble}
+%% You can specify multiple names like this, especially if you have changed your name or if you need to highlight multiple authors. See items 6–9 in the example "Journal Articles" output.
+\mynames{Lim/Lian\bibnamedelima Tze,
+  Wong/Lian\bibnamedelima Tze,
+  Lim/Tracy,
+  Lim/L.\bibnamedelimi T.}
+%% MAKE SURE THERE IS NO SPACE AFTER THE FINAL NAME IN YOUR \mynames LIST
+
+
+% Bibliography macros
+\newcommand{\apjl}{Astrophys.~J.~Lettq.}
+\newcommand{\mnras}{Mon.~Not.~R.~Astron.~Soc.}
+\newcommand{\aap}{Astron.~Astrophys.}
+\newcommand{\aj}{Astron.~J.}
+\newcommand{\physrep}{Phys.~Rep.}
+\newcommand{\araa}{Ann.~Rev.~Astron.~Astrophys.}
+\newcommand{\apjs}{Astrophys.~J.~Supp.}
+\newcommand{\prd}{Phys.~Rev.~D.}
+\newcommand{\jcap}{J.~Cosmol.~Astropart.~Phys.}
+\newcommand\ijtp{Int.~J.~Theor.~Phys.}
+
+\usepackage{enumitem}
+% Change the fonts if you want
+\ifxetexorluatex % If you're using XeLaTeX or LuaLaTeX
+  \usepackage{fontspec} 
+  %% You can use \setmainfont etc; I'm just using these font packages here because they provide OpenType fonts for use by XeLaTeX/LuaLaTeX anyway
+  \usepackage[p,osf,swashQ]{cochineal}
+  \usepackage[medium,bold]{cabin}
+  \usepackage[varqu,varl,scale=0.9]{zi4}
+\else % If you're using pdfLaTeX or latex
+  \usepackage[T1]{fontenc}
+  \usepackage[p,osf,swashQ]{cochineal}
+  \usepackage{cabin}
+  \usepackage[varqu,varl,scale=0.9]{zi4}
+\fi
+
+% Change the page margins if you want
+% \geometry{left=1cm,right=1cm,top=1.5cm,bottom=1.5cm}
+
+% Change the colours if you want
+% \definecolor{SwishLineColour}{HTML}{00FFFF}
+% \definecolor{MarkerColour}{HTML}{0000CC}
+
+% Change the item prefix marker if you want
+% \prefixmarker{$\diamond$}
+
+%% Photo is only shown if "fullonly" is included
+\includecomment{fullonly}
+% \excludecomment{fullonly}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\leftheader{%
+  \centering
+  \begin{tabular}{c} % Inicia una tabla con una columna centrada ('c')
+    {\Huge\bfseries\sffamily Hernán Enrique Noriega} \\[2mm]
+    Instituto de Física \& Instituto de Ciencias Físicas, UNAM  \\
+    \textit{Teléfono}: $+57$\, $777$-$557$-$8085$ \\[3mm]
+    
+    \makefield{\faEnvelope[regular]}{\href{mailto:henoriega@icf.unam.mx}{\texttt{henoriega@icf.unam.mx}}}
+    \quad\quad
+    \makefield{\faGlobe}{\url{https://henoriega.github.io/}}
+  \end{tabular}
+}
+
+\makeatletter
+\renewcommand{\@evenfoot}{\hfill\thepage\hfill}
+\renewcommand{\@oddfoot}{\hfill\thepage\hfill}
+\makeatother
+
+\title{Curriculum Vitae}
+
+
+\begin{document}
+\makeheaders[c]
+
+\makerubric{research_interests_sp}
+\makerubric{education_sp}
+\makerubric{research_internships_sp}
+\makerubric{awards_sp}
+\input{publications_sp}
+\makerubric{softwares_sp}
+\makerubric{talks_sp}
+\makerubric{scientific_collaborations_sp}
+\makerubric{service_sp}
+\makerubric{teaching_sp}
+\makerubric{outreach_sp}
+\makerubric{skills_sp}
+\makerubric{references_sp}
+
+\end{document}
